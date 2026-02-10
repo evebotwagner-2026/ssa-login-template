@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
  * Inicializa o formulário de login com validação e submit
  */
 function initializeLoginForm() {
-    const form = document.getElementById('loginForm');
+    const form = document.getElementById('login-form');
     const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
+    const passwordInput = document.getElementById('senha');
 
     if (!form || !emailInput || !passwordInput) {
         console.error('Elementos do formulário não encontrados');
@@ -155,7 +155,7 @@ function clearAllErrors() {
  * Inicializa o botão de toggle de visibilidade da senha
  */
 function initializePasswordToggle() {
-    const passwordInput = document.getElementById('password');
+    const passwordInput = document.getElementById('senha');
     if (!passwordInput) return;
 
     // Criar botão de toggle
@@ -342,7 +342,7 @@ function hideNotification(toast) {
  */
 function initializeRememberMe() {
     const emailInput = document.getElementById('email');
-    const form = document.getElementById('loginForm');
+    const form = document.getElementById('login-form');
     
     if (!emailInput || !form) return;
 
@@ -617,7 +617,7 @@ function initializeInputAnimations() {
     }
 
     // Enter para navegar entre campos
-    const inputs = document.querySelectorAll('#loginForm input');
+    const inputs = document.querySelectorAll('#login-form input');
     inputs.forEach((input, index) => {
         input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter' && index < inputs.length - 1) {
