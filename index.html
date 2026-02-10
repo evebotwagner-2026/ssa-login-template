@@ -3,104 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSA - Login</title>
+    <meta name="description" content="Login - Sistema SSA-BR. Acesse sua conta de forma segura e rápida.">
+    <meta name="theme-color" content="#0B2B40">
+    
+    <title>Login | SSA-BR</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="ssa-logo-original.png">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-left">
-            <div class="brand-section">
-                <div class="logo-wrapper">
-                    <img src="https://ssa-br.com/wp-content/uploads/2022/08/ssa-logo-2x-300x87.png" alt="SSA Logo" class="logo">
-                </div>
-                <div class="brand-text">
-                    <h1>Bem-vindo de volta</h1>
-                    <p>Acesse sua conta para gerenciar seus projetos e acompanhar o progresso da sua equipe.</p>
-                </div>
-            </div>
-            
-            <div class="decoration">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="floating-card">
-                    <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <div class="card-text">
-                        <span class="card-title">Projetos Ativos</span>
-                        <span class="card-value">24</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="login-right">
-            <div class="form-container">
-                <div class="form-header">
-                    <h2>Login</h2>
-                    <p>Entre com suas credenciais para continuar</p>
+    <main class="login-container" role="main">
+        <!-- Lado Esquerdo - Branding -->
+        <section class="login-branding" aria-label="Informações da marca">
+            <div class="branding-content">
+                <figure class="logo-wrapper">
+                    <img 
+                        src="ssa-logo-original.png" 
+                        alt="Logo SSA-BR - Secretaria de Segurança Alimentar" 
+                        class="logo-img"
+                        width="300"
+                        height="87"
+                    >
+                </figure>
+                
+                <div class="welcome-text">
+                    <h1 class="welcome-title">Bem-vindo</h1>
+                    <p class="welcome-subtitle">
+                        Acesse o sistema da Secretaria de Segurança Alimentar e nutrição para gerenciar seus programas e acompanhar indicadores estratégicos.
+                    </p>
                 </div>
                 
-                <form class="login-form" id="loginForm">
-                    <div class="input-group">
-                        <label for="email">E-mail</label>
-                        <div class="input-wrapper">
-                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-                        </div>
+                <footer class="branding-footer">
+                    <p class="copyright">© 2026 SSA-BR. Todos os direitos reservados.</p>
+                </footer>
+            </div>
+        </section>
+        
+        <!-- Lado Direito - Formulário de Login -->
+        <section class="login-form-section" aria-label="Formulário de login">
+            <div class="form-wrapper">
+                <header class="form-header">
+                    <h2 class="form-title">Acessar conta</h2>
+                    <p class="form-subtitle">Entre com suas credenciais para continuar</p>
+                </header>
+                
+                <form 
+                    id="login-form" 
+                    class="login-form" 
+                    action="#" 
+                    method="POST"
+                    novalidate
+                >
+                    <!-- Campo Email -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            E-mail
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input"
+                            placeholder="seu.email@exemplo.com"
+                            required
+                            autocomplete="email"
+                            aria-required="true"
+                            aria-describedby="email-help"
+                        >
+                        <span id="email-help" class="sr-only">Digite seu endereço de e-mail cadastrado</span>
                     </div>
                     
-                    <div class="input-group">
-                        <label for="password">Senha</label>
-                        <div class="input-wrapper">
-                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                            </svg>
-                            <input type="password" id="password" name="password" placeholder="••••••••" required>
-                            <button type="button" class="toggle-password" id="togglePassword">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                    <circle cx="12" cy="12" r="3"/>
-                                </svg>
+                    <!-- Campo Senha -->
+                    <div class="form-group">
+                        <label for="senha" class="form-label">
+                            Senha
+                        </label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="senha" 
+                                name="senha" 
+                                class="form-input"
+                                placeholder="••••••••"
+                                required
+                                autocomplete="current-password"
+                                aria-required="true"
+                                aria-describedby="senha-help"
+                            >
+                            <button 
+                                type="button" 
+                                id="toggle-password"
+                                class="password-toggle"
+                                aria-label="Mostrar ou ocultar senha"
+                                aria-pressed="false"
+                            >
+                                <span class="toggle-icon" aria-hidden="true">👁️</span>
                             </button>
                         </div>
+                        <span id="senha-help" class="sr-only">Digite sua senha de acesso</span>
                     </div>
                     
+                    <!-- Opções de login -->
                     <div class="form-options">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="remember">
-                            <span class="checkmark"></span>
-                            <span class="checkbox-label">Lembrar-me</span>
-                        </label>
-                        <a href="#" class="forgot-link">Esqueceu a senha?</a>
+                        <div class="checkbox-wrapper">
+                            <input 
+                                type="checkbox" 
+                                id="lembrar-me" 
+                                name="lembrar-me"
+                                class="form-checkbox"
+                            >
+                            <label for="lembrar-me" class="checkbox-label">
+                                Lembrar-me
+                            </label>
+                        </div>
+                        
+                        <a 
+                            href="#" 
+                            id="esqueceu-senha"
+                            class="forgot-password-link"
+                        >
+                            Esqueceu a senha?
+                        </a>
                     </div>
                     
-                    <button type="submit" class="btn-login">
-                        <span class="btn-text">Entrar</span>
-                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                            <polyline points="12 5 19 12 12 19"/>
-                        </svg>
+                    <!-- Botão Entrar -->
+                    <button 
+                        type="submit" 
+                        id="btn-entrar"
+                        class="btn btn-primary btn-full"
+                    >
+                        Entrar
                     </button>
-                </form>
-                
-                <div class="divider">
-                    <span>ou</span>
-                </div>
-                
-                <div class="social-login">
-                    <button class="btn-social btn-google">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
+                    
+                    <!-- Divisor -->
+                    <div class="divider" role="separator" aria-label="Ou continue com">
+                        <span class="divider-line"></span>
+                        <span class="divider-text">ou</span>
+                        <span class="divider-line"></span>
+                    </div>
+                    
+                    <!-- Botão Google -->
+                    <button 
+                        type="button" 
+                        id="btn-google"
+                        class="btn btn-google btn-full"
+                        aria-label="Continuar com Google"
+                    >
+                        <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                             <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                             <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
@@ -108,15 +165,26 @@
                         </svg>
                         <span>Continuar com Google</span>
                     </button>
-                </div>
+                </form>
                 
-                <p class="signup-text">
-                    Não tem uma conta? <a href="#" class="signup-link">Solicitar acesso</a>
-                </p>
+                <!-- Link Solicitar Acesso -->
+                <footer class="form-footer">
+                    <p class="access-request">
+                        Não tem acesso? 
+                        <a 
+                            href="#" 
+                            id="solicitar-acesso"
+                            class="access-link"
+                        >
+                            Solicitar acesso
+                        </a>
+                    </p>
+                </footer>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
     
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
 </body>
 </html>
